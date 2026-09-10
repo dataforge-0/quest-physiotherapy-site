@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quest Physiotherapy | Private 1-on-1 Physiotherapy in Mississauga</title>
+<meta name="description" content="Quest Physiotherapy at Hurontario & The Queensway, Mississauga. Private-room, one-on-one musculoskeletal, pelvic floor, and pediatric physiotherapy. Direct billing to major insurers, WSIB, and MVA/HCAI." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root{
+    --ink:#152420;
+    --ink-soft:#44564E;
+    --pine:#1F4741;
+    --pine-deep:#12302C;
+    --paper:#F1F3EE;
+    --paper-alt:#E7EBE2;
+    --line:#D6DCCF;
+    --gold:#B8873C;
+    --gold-deep:#96692A;
+    --white:#FFFFFF;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    font-family:'Inter', -apple-system, sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .serif{font-family:'Fraunces', Georgia, serif;}
+
+  ::selection{background:var(--gold); color:var(--white);}
+
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:2px;
+    border-radius:2px;
+  }
+
+  .container-w{max-width:1180px; margin-inline:auto; padding-inline:1.5rem;}
+
+  /* ---------- Marquee ---------- */
+  .marquee-track{
+    display:flex;
+    width:max-content;
+    animation:scroll-left 32s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none; flex-wrap:wrap; width:100%; justify-content:center;}
+  }
+  @keyframes scroll-left{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .marquee-wrap{overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, black 8%, black 92%, transparent); mask-image:linear-gradient(90deg, transparent, black 8%, black 92%, transparent);}
+
+  /* ---------- FAQ chevron ---------- */
+  details > summary{list-style:none; cursor:pointer;}
+  details > summary::-webkit-details-marker{display:none;}
+  details[open] .faq-chevron{transform:rotate(180deg);}
+  .faq-chevron{transition:transform .25s ease;}
+  @media (prefers-reduced-motion: reduce){ .faq-chevron{transition:none;} }
+
+  /* ---------- Mobile menu ---------- */
+  #mobile-menu{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  #mobile-menu.open{max-height:640px;}
+  @media (prefers-reduced-motion: reduce){ #mobile-menu{transition:none;} }
+
+  .skip-link{
+    position:absolute; left:-9999px; top:0; z-index:100;
+    background:var(--pine-deep); color:var(--white); padding:.75rem 1.25rem;
+  }
+  .skip-link:focus{left:1rem; top:1rem;}
+</style>
+</head>
+
+<body class="antialiased">
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============ TOP UTILITY STRIP ============ -->
+<div class="bg-[color:var(--pine-deep)] text-white text-sm">
+  <div class="container-w flex flex-wrap items-center justify-between gap-2 py-2">
+    <p class="flex items-center gap-2">
+      <span>2325 Hurontario St, Mississauga — at Queentario Medical Centre</span>
+    </p>
+    <a href="tel:+14168350509" class="font-medium hover:text-[color:var(--gold)] transition-colors">Call (416) 835-0509</a>
+  </div>
+</div>
+
+<!-- ============ STICKY NAV ============ -->
+<header class="sticky top-0 z-50 bg-[color:var(--paper)]/95 backdrop-blur border-b border-[color:var(--line)]">
+  <div class="container-w flex items-center justify-between py-4">
+    <a href="#top" class="serif text-2xl font-semibold text-[color:var(--pine-deep)]">Quest Physiotherapy</a>
+
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#services" class="hover:text-[color:var(--gold-deep)] transition-colors">Services</a>
+      <a href="#about" class="hover:text-[color:var(--gold-deep)] transition-colors">About</a>
+      <a href="#billing" class="hover:text-[color:var(--gold-deep)] transition-colors">Direct billing</a>
+      <a href="#visit" class="hover:text-[color:var(--gold-deep)] transition-colors">Visit us</a>
+      <a href="#faq" class="hover:text-[color:var(--gold-deep)] transition-colors">FAQ</a>
+    </nav>
+
+    <div class="hidden md:block">
+      <a href="https://queentariophysio.embodiaapp.com/" class="inline-flex items-center gap-2 bg-[color:var(--pine)] text-white px-5 py-2.5 rounded-sm font-medium hover:bg-[color:var(--pine-deep)] transition-colors">
+        Book online
+      </a>
+    </div>
+
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2" aria-label="Toggle menu">
+      <svg id="icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="md:hidden border-t border-[color:var(--line)]">
+    <div class="container-w flex flex-col py-4 gap-1 text-[15px] font-medium">
+      <a href="#services" class="py-2.5">Services</a>
+      <a href="#about" class="py-2.5">About</a>
+      <a href="#billing" class="py-2.5">Direct billing</a>
+      <a href="#visit" class="py-2.5">Visit us</a>
+      <a href="#faq" class="py-2.5">FAQ</a>
+      <a href="https://queentariophysio.embodiaapp.com/" class="mt-2 mb-2 text-center bg-[color:var(--pine)] text-white px-5 py-3 rounded-sm font-medium">Book online</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section id="top" class="container-w pt-14 pb-16 md:pt-20 md:pb-24">
+  <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 items-start">
+    <div>
+      <h1 class="serif text-[2.5rem] leading-[1.08] md:text-[3.4rem] md:leading-[1.06] font-semibold text-[color:var(--pine-deep)] max-w-xl">
+        Every session, one room, one physiotherapist, your full attention.
+      </h1>
+      <p class="mt-6 text-lg text-[color:var(--ink-soft)] max-w-lg leading-relaxed">
+        Quest Physiotherapy is a private-room clinic in Mississauga built around one idea: care works best without double-booking, without aides, and without being rushed. Musculoskeletal, pelvic floor, and pediatric physiotherapy, delivered one-on-one from start to finish.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://queentariophysio.embodiaapp.com/" class="bg-[color:var(--pine)] text-white px-7 py-3.5 rounded-sm font-medium hover:bg-[color:var(--pine-deep)] transition-colors">Book online</a>
+        <a href="tel:+14168350509" class="border border-[color:var(--pine)] text-[color:var(--pine-deep)] px-7 py-3.5 rounded-sm font-medium hover:bg-[color:var(--paper-alt)] transition-colors">Call the clinic</a>
+      </div>
+    </div>
+
+    <div class="border border-[color:var(--line)] bg-white p-6 md:p-7">
+      <p class="serif text-lg text-[color:var(--pine-deep)] mb-5">What every visit includes</p>
+      <ul class="space-y-4 text-[15px] text-[color:var(--ink-soft)]">
+        <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8873C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Direct billing to Sun Life, Canada Life, Manulife, Green Shield, Blue Cross, WSIB, and MVA/HCAI claims</li>
+        <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8873C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free on-site parking, steps from the door</li>
+        <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8873C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Registered Physiotherapist with the College of Physiotherapists of Ontario</li>
+        <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8873C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Private treatment rooms — no shared bays, no aides</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSURER MARQUEE ============ -->
+<section class="border-y border-[color:var(--line)] bg-white py-6">
+  <p class="container-w text-sm text-[color:var(--ink-soft)] mb-4">Direct billing accepted from</p>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- duplicated list x2 for seamless loop -->
+      <div class="flex items-center gap-5 pr-5">
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Sun Life</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Canada Life</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Manulife</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Green Shield</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Blue Cross</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">WSIB</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">MVA / HCAI</span>
+      </div>
+      <div class="flex items-center gap-5 pr-5" aria-hidden="true">
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Sun Life</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Canada Life</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Manulife</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Green Shield</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">Blue Cross</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">WSIB</span>
+        <span class="border border-[color:var(--line)] px-5 py-2.5 serif text-[15px] font-medium text-[color:var(--pine-deep)] whitespace-nowrap">MVA / HCAI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="container-w py-20 md:py-28">
+  <div class="max-w-2xl">
+    <h2 class="serif text-3xl md:text-[2.4rem] font-semibold text-[color:var(--pine-deep)]">What we treat</h2>
+    <p class="mt-4 text-[color:var(--ink-soft)] leading-relaxed">Four focused areas of practice, each treated one-on-one, in a private room, for the full length of your appointment.</p>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-2 gap-px bg-[color:var(--line)] border border-[color:var(--line)]">
+
+    <!-- MSK -->
+    <div class="bg-white p-8 md:p-10">
+      <h3 class="serif text-xl font-semibold text-[color:var(--pine-deep)]"><a href="musculoskeletal.html" class="hover:text-[color:var(--gold-deep)]">Musculoskeletal & orthopedic physiotherapy</a></h3>
+      <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Assessment and hands-on treatment for pain, injury, and post-surgical recovery, including manual therapy and laser therapy where appropriate.</p>
+      <ul class="mt-5 space-y-2 text-[15px] text-[color:var(--ink-soft)]">
+        <li><a href="musculoskeletal.html#back-neck" class="hover:text-[color:var(--gold-deep)]">Back, neck, and shoulder pain</a></li>
+        <li><a href="musculoskeletal.html#sports" class="hover:text-[color:var(--gold-deep)]">Sports injuries and sprains/strains</a></li>
+        <li><a href="musculoskeletal.html#surgery" class="hover:text-[color:var(--gold-deep)]">Post-surgical rehab (knee, hip, shoulder)</a></li>
+        <li><a href="musculoskeletal.html#arthritis" class="hover:text-[color:var(--gold-deep)]">Arthritis and joint pain management</a></li>
+        <li><a href="musculoskeletal.html#whiplash" class="hover:text-[color:var(--gold-deep)]">Whiplash and motor vehicle accident injuries</a></li>
+        <li><a href="musculoskeletal.html#workplace" class="hover:text-[color:var(--gold-deep)]">Workplace injuries (WSIB claims)</a></li>
+      </ul>
+      <a href="musculoskeletal.html" class="inline-block mt-5 text-sm font-medium text-[color:var(--gold-deep)] hover:underline">See all musculoskeletal conditions we treat →</a>
+    </div>
+
+    <!-- Pelvic floor -->
+    <div class="bg-white p-8 md:p-10">
+      <h3 class="serif text-xl font-semibold text-[color:var(--pine-deep)]"><a href="pelvic-floor.html" class="hover:text-[color:var(--gold-deep)]">Pelvic floor physiotherapy</a></h3>
+      <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Assessment and treatment for bladder, bowel, and pelvic pain concerns, in a private room with a dedicated, unhurried appointment length.</p>
+      <ul class="mt-5 space-y-2 text-[15px] text-[color:var(--ink-soft)]">
+        <li><a href="pelvic-floor.html#incontinence" class="hover:text-[color:var(--gold-deep)]">Urinary incontinence and urgency</a></li>
+        <li><a href="pelvic-floor.html#prolapse" class="hover:text-[color:var(--gold-deep)]">Pelvic organ prolapse</a></li>
+        <li><a href="pelvic-floor.html#pelvic-pain" class="hover:text-[color:var(--gold-deep)]">Pelvic pain and painful intercourse</a></li>
+        <li><a href="pelvic-floor.html#postpartum" class="hover:text-[color:var(--gold-deep)]">Pregnancy and postpartum recovery</a></li>
+        <li><a href="pelvic-floor.html#diastasis" class="hover:text-[color:var(--gold-deep)]">Diastasis recti (core separation)</a></li>
+        <li><a href="pelvic-floor.html#bowel" class="hover:text-[color:var(--gold-deep)]">Constipation and bowel dysfunction</a></li>
+      </ul>
+      <a href="pelvic-floor.html" class="inline-block mt-5 text-sm font-medium text-[color:var(--gold-deep)] hover:underline">See all pelvic floor conditions we treat →</a>
+    </div>
+
+    <!-- Pediatric -->
+    <div class="bg-white p-8 md:p-10">
+      <h3 class="serif text-xl font-semibold text-[color:var(--pine-deep)]"><a href="pediatric.html" class="hover:text-[color:var(--gold-deep)]">Pediatric physiotherapy</a></h3>
+      <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Play-based assessment and treatment for infants and children, with guidance parents can carry home between visits.</p>
+      <ul class="mt-5 space-y-2 text-[15px] text-[color:var(--ink-soft)]">
+        <li><a href="pediatric.html#torticollis" class="hover:text-[color:var(--gold-deep)]">Torticollis and plagiocephaly (flat/turned head)</a></li>
+        <li><a href="pediatric.html#milestones" class="hover:text-[color:var(--gold-deep)]">Delayed motor milestones</a></li>
+        <li><a href="pediatric.html#gait" class="hover:text-[color:var(--gold-deep)]">Gait concerns (toe-walking, in-toeing)</a></li>
+        <li><a href="pediatric.html#coordination" class="hover:text-[color:var(--gold-deep)]">Coordination and balance difficulties</a></li>
+        <li><a href="pediatric.html#injury" class="hover:text-[color:var(--gold-deep)]">Post-surgical and post-injury rehab</a></li>
+      </ul>
+      <a href="pediatric.html" class="inline-block mt-5 text-sm font-medium text-[color:var(--gold-deep)] hover:underline">See all pediatric conditions we treat →</a>
+    </div>
+
+    <!-- Pediatric pelvic -->
+    <div class="bg-white p-8 md:p-10">
+      <h3 class="serif text-xl font-semibold text-[color:var(--pine-deep)]"><a href="pediatric-pelvic-health.html" class="hover:text-[color:var(--gold-deep)]">Pediatric pelvic health</a></h3>
+      <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">A gentle, age-appropriate approach to bladder and bowel concerns in children, handled with the same one-on-one care as our adult pelvic floor practice.</p>
+      <ul class="mt-5 space-y-2 text-[15px] text-[color:var(--ink-soft)]">
+        <li><a href="pediatric-pelvic-health.html#bedwetting" class="hover:text-[color:var(--gold-deep)]">Bedwetting (nocturnal enuresis)</a></li>
+        <li><a href="pediatric-pelvic-health.html#daytime" class="hover:text-[color:var(--gold-deep)]">Daytime urinary accidents</a></li>
+        <li><a href="pediatric-pelvic-health.html#constipation" class="hover:text-[color:var(--gold-deep)]">Constipation-related bladder or bowel issues</a></li>
+      </ul>
+      <a href="pediatric-pelvic-health.html" class="inline-block mt-5 text-sm font-medium text-[color:var(--gold-deep)] hover:underline">See all pediatric pelvic health conditions →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / CLINICIAN ============ -->
+<section id="about" class="bg-[color:var(--pine-deep)] text-white py-20 md:py-28">
+  <div class="container-w grid md:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+    <div>
+      <div class="w-full aspect-[4/5] bg-[color:var(--pine)] border border-white/15 flex items-center justify-center">
+        <span class="text-white/40 text-sm">Clinician photo</span>
+      </div>
+    </div>
+    <div>
+      <p class="text-sm uppercase-none text-[color:var(--gold)] font-medium">Your physiotherapist</p>
+      <h2 class="serif text-3xl md:text-[2.3rem] font-semibold mt-2">Ishika</h2>
+      <p class="mt-5 text-white/85 leading-relaxed max-w-xl">
+        Ishika is a Registered Physiotherapist with the College of Physiotherapists of Ontario, with over a decade of clinical experience in Canada. She has completed advanced clinical training in pelvic health physiotherapy and has been practicing in this area for more than ten years, alongside a broad musculoskeletal and pediatric caseload.
+      </p>
+      <p class="mt-4 text-white/85 leading-relaxed max-w-xl">
+        Every appointment at Quest is with Ishika directly — the same clinician who assesses you is the one who treats you, session to session, with no delegation to aides and no double-booked rooms.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARE PATHWAY ============ -->
+<section class="container-w py-20 md:py-28">
+  <h2 class="serif text-3xl md:text-[2.4rem] font-semibold text-[color:var(--pine-deep)] max-w-xl">How care works here</h2>
+  <div class="mt-12 grid md:grid-cols-3 gap-10">
+    <div class="border-t-2 border-[color:var(--gold)] pt-5">
+      <p class="serif text-2xl text-[color:var(--gold-deep)]">1</p>
+      <h3 class="font-semibold mt-2">Initial assessment</h3>
+      <p class="mt-2 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">A full history and hands-on assessment with Ishika, leading to a treatment plan built around your specific goals.</p>
+    </div>
+    <div class="border-t-2 border-[color:var(--gold)] pt-5">
+      <p class="serif text-2xl text-[color:var(--gold-deep)]">2</p>
+      <h3 class="font-semibold mt-2">One-on-one treatment</h3>
+      <p class="mt-2 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Private-room sessions combining hands-on manual therapy, targeted exercise, and education — never shared, never rushed.</p>
+    </div>
+    <div class="border-t-2 border-[color:var(--gold)] pt-5">
+      <p class="serif text-2xl text-[color:var(--gold-deep)]">3</p>
+      <h3 class="font-semibold mt-2">A home program that sticks</h3>
+      <p class="mt-2 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Clear, specific exercises to continue between visits, adjusted as you progress toward being pain-free and independent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIRECT BILLING / INSURANCE ============ -->
+<section id="billing" class="bg-[color:var(--paper-alt)] py-20 md:py-28">
+  <div class="container-w grid md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="serif text-3xl md:text-[2.4rem] font-semibold text-[color:var(--pine-deep)]">Direct billing & insurance</h2>
+      <p class="mt-5 text-[color:var(--ink-soft)] leading-relaxed">
+        Where your plan allows it, we bill your insurer directly — you pay only what your plan doesn't cover, on the day of your visit. We accept cash, debit, and major credit cards for any remaining balance.
+      </p>
+      <p class="mt-4 text-[color:var(--ink-soft)] leading-relaxed">
+        We submit direct claims to Sun Life, Canada Life, Manulife, Green Shield, and Blue Cross, among others. If your plan isn't set up for direct billing, we provide a detailed receipt for your own reimbursement claim.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="bg-white border border-[color:var(--line)] p-6">
+        <h3 class="font-semibold text-[color:var(--pine-deep)]">Workplace injuries (WSIB)</h3>
+        <p class="mt-2 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">The Workplace Safety and Insurance Board pays us directly for approved work-related injury claims — no out-of-pocket cost to you for covered treatment.</p>
+      </div>
+      <div class="bg-white border border-[color:var(--line)] p-6">
+        <h3 class="font-semibold text-[color:var(--pine-deep)]">Motor vehicle accidents (MVA/HCAI)</h3>
+        <p class="mt-2 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Auto insurance claims are submitted directly through HCAI. If you carry extended health benefits, those are billed first, with the remainder directed to your auto insurer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT US ============ -->
+<section id="visit" class="container-w py-20 md:py-28">
+  <h2 class="serif text-3xl md:text-[2.4rem] font-semibold text-[color:var(--pine-deep)] max-w-xl">Visit us</h2>
+
+  <div class="mt-12 grid md:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+    <div class="space-y-6">
+      <div>
+        <h3 class="font-semibold text-[color:var(--pine-deep)]">Address</h3>
+        <p class="mt-1.5 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">2325 Hurontario St, Mississauga, ON L5A 2E8 — at Queentario Medical Centre, on the Hurontario & The Queensway intersection.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-[color:var(--pine-deep)]">Parking</h3>
+        <p class="mt-1.5 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Free on-site parking is available in the plaza lot, a short walk from our door — no permits, meters, or time limits.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-[color:var(--pine-deep)]">Accessibility</h3>
+        <p class="mt-1.5 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Our clinic is on the ground floor with direct, step-free access from the parking lot — no stairs or elevator required.</p>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=2325+Hurontario+St+Mississauga+ON+L5A+2E8" target="_blank" rel="noopener" class="inline-block mt-2 bg-[color:var(--pine)] text-white px-6 py-3 rounded-sm font-medium hover:bg-[color:var(--pine-deep)] transition-colors">Get directions</a>
+    </div>
+
+    <div class="border border-[color:var(--line)] h-80 md:h-full min-h-[320px]">
+      <iframe
+        title="Map showing Quest Physiotherapy location at 2325 Hurontario St, Mississauga"
+        src="https://www.google.com/maps?q=2325+Hurontario+St+Mississauga+ON+L5A+2E8&output=embed"
+        width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="bg-[color:var(--paper-alt)] py-20 md:py-28">
+  <div class="container-w max-w-3xl">
+    <h2 class="serif text-3xl md:text-[2.4rem] font-semibold text-[color:var(--pine-deep)]">Common questions</h2>
+
+    <div class="mt-10 divide-y divide-[color:var(--line)] border-t border-b border-[color:var(--line)]">
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          Do I need a doctor's referral to book?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">No referral is required to book a physiotherapy appointment. Some insurance plans do require one for reimbursement, so it's worth checking your plan — but you're welcome to book directly with us either way.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          What should I wear or bring to my first appointment?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Loose, comfortable clothing that gives access to the area being treated works best. If you have prior imaging (X-ray, MRI, or ultrasound reports), bringing copies helps with your assessment.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          How long does the initial assessment take?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Most initial musculoskeletal assessments run 45 minutes to an hour. Pelvic floor assessments typically take longer — closer to 60–75 minutes — to allow time for a full history, education, and examination without feeling rushed.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          How many sessions will I likely need?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">This depends entirely on your condition — Ishika will discuss an estimated treatment plan with you after your assessment, and adjust it as your symptoms improve.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          How does physiotherapy work for a workplace injury (WSIB)?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">For approved WSIB claims, the Workplace Safety and Insurance Board pays us directly for your treatment — there's no out-of-pocket cost to you for covered sessions.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          How does billing work after a motor vehicle accident?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Auto insurance claims are billed directly through HCAI. If you also carry extended health benefits, those are typically billed first, with any remaining cost directed to your auto insurer.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          What happens during a pelvic floor assessment?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Your first visit starts with a detailed conversation about your history and symptoms, followed by an external assessment. Depending on your concern, an internal assessment may be recommended — this is always explained clearly beforehand, and only proceeds with your full, informed consent, which you can withdraw at any time.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          What conditions can pelvic floor physiotherapy help with?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Common concerns include urinary incontinence, pelvic organ prolapse, pelvic pain, painful intercourse, constipation, and pregnancy or postpartum-related issues like diastasis recti and pelvic girdle pain.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          Does Quest treat bedwetting or bladder concerns in children?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Yes — pediatric pelvic health, including bedwetting and daytime accidents, is treated with the same gentle, age-appropriate, one-on-one approach as our other pediatric services.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          At what age can a child start pediatric physiotherapy?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Pediatric physiotherapy can begin in infancy — conditions like torticollis are often addressed within the first few months of life — right through the teenage years.</p>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-center justify-between gap-4 font-medium text-[color:var(--pine-deep)]">
+          Is there free parking at the clinic?
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="mt-3 text-[15px] text-[color:var(--ink-soft)] leading-relaxed">Yes — free, unrestricted parking is available in the plaza lot right outside the clinic entrance.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="py-20 md:py-28">
+  <div class="container-w text-center">
+    <h2 class="serif text-3xl md:text-[2.6rem] font-semibold text-[color:var(--pine-deep)] max-w-2xl mx-auto">Ready when you are.</h2>
+    <p class="mt-4 text-[color:var(--ink-soft)] max-w-md mx-auto leading-relaxed">Book your one-on-one appointment with Ishika, in a private room, at your own pace.</p>
+    <a href="https://queentariophysio.embodiaapp.com/" class="inline-block mt-8 bg-[color:var(--pine)] text-white px-9 py-4 rounded-sm font-medium hover:bg-[color:var(--pine-deep)] transition-colors">Book online</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[color:var(--pine-deep)] text-white/70 pt-14 pb-28 md:pb-14 text-sm">
+  <div class="container-w grid md:grid-cols-3 gap-10">
+    <div>
+      <p class="serif text-xl text-white">Quest Physiotherapy</p>
+      <p class="mt-3 leading-relaxed">2325 Hurontario St<br>Mississauga, ON L5A 2E8<br>At Queentario Medical Centre</p>
+    </div>
+    <div>
+      <p class="text-white font-medium mb-3">Contact</p>
+      <p><a href="tel:+14168350509" class="hover:text-white">(416) 835-0509</a></p>
+      <p class="mt-1"><a href="https://queentariophysio.embodiaapp.com/" class="hover:text-white">Book online via Embodia</a></p>
+    </div>
+    <div>
+      <p class="text-white font-medium mb-3">Regulatory</p>
+      <p class="leading-relaxed">Ishika is a Registered Physiotherapist with the College of Physiotherapists of Ontario. Information on this site is educational and does not replace individualized clinical assessment.</p>
+    </div>
+  </div>
+  <div class="container-w mt-10 pt-6 border-t border-white/10">
+    <p>&copy; <span id="year"></span> Quest Physiotherapy. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY ACTION BAR ============ -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-[color:var(--line)] px-4 py-3 flex gap-3">
+  <a href="tel:+14168350509" class="flex-1 text-center border border-[color:var(--pine)] text-[color:var(--pine-deep)] py-3 rounded-sm font-medium">Call</a>
+  <a href="https://queentariophysio.embodiaapp.com/" class="flex-1 text-center bg-[color:var(--pine)] text-white py-3 rounded-sm font-medium">Book online</a>
+</div>
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PhysicalTherapy",
+  "name": "Quest Physiotherapy",
+  "image": "",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2325 Hurontario St",
+    "addressLocality": "Mississauga",
+    "addressRegion": "ON",
+    "postalCode": "L5A 2E8",
+    "addressCountry": "CA"
+  },
+  "telephone": "+1-416-835-0509",
+  "employee": {
+    "@type": "Person",
+    "name": "Ishika",
+    "jobTitle": "Registered Physiotherapist",
+    "memberOf": {
+      "@type": "Organization",
+      "name": "College of Physiotherapists of Ontario"
+    }
+  },
+  "amenityFeature": [
+    {"@type":"LocationFeatureSpecification","name":"Free on-site parking","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Wheelchair accessible, ground floor","value":true}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Physiotherapy Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"Musculoskeletal & Orthopedic Physiotherapy"}},
+      {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"Pelvic Floor Physiotherapy"}},
+      {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"Pediatric Physiotherapy"}},
+      {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"Pediatric Pelvic Health"}}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do I need a doctor's referral to book?","acceptedAnswer":{"@type":"Answer","text":"No referral is required to book a physiotherapy appointment. Some insurance plans require one for reimbursement, so it's worth checking your plan."}},
+    {"@type":"Question","name":"How long does the initial assessment take?","acceptedAnswer":{"@type":"Answer","text":"Most initial musculoskeletal assessments run 45 minutes to an hour. Pelvic floor assessments typically take 60 to 75 minutes."}},
+    {"@type":"Question","name":"How does physiotherapy work for a workplace injury (WSIB)?","acceptedAnswer":{"@type":"Answer","text":"For approved WSIB claims, the Workplace Safety and Insurance Board pays the clinic directly for treatment."}},
+    {"@type":"Question","name":"Does Quest treat bedwetting or bladder concerns in children?","acceptedAnswer":{"@type":"Answer","text":"Yes, pediatric pelvic health including bedwetting and daytime accidents is treated one-on-one."}},
+    {"@type":"Question","name":"Is there free parking at the clinic?","acceptedAnswer":{"@type":"Answer","text":"Yes, free, unrestricted parking is available in the plaza lot outside the clinic entrance."}}
+  ]
+}
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    iconOpen.classList.toggle('hidden', isOpen);
+    iconClose.classList.toggle('hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+</script>
+
+</body>
+</html>

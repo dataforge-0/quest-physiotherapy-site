@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
@@ -140,14 +142,14 @@
   <span class="mx-2">/</span>
   <a href="index.html#services" class="hover:text-[color:var(--gold-deep)]">Services</a>
   <span class="mx-2">/</span>
-  <span class="text-[color:var(--pine-deep)]">Musculoskeletal & orthopedic physiotherapy</span>
+  <span class="text-[color:var(--pine-deep)]">Musculoskeletal & Orthopedic Physiotherapy</span>
 </div>
 
 <!-- ============ PAGE INTRO + ISSUE FINDER ============ -->
 <section class="container-w pt-8 pb-4 md:pt-10">
   <div class="grid md:grid-cols-[1.3fr_1fr] gap-8 items-center">
     <div>
-      <h1 class="serif text-2xl md:text-3xl font-semibold text-[color:var(--pine-deep)]">Musculoskeletal & orthopedic physiotherapy</h1>
+      <h1 class="serif text-2xl md:text-3xl font-semibold text-[color:var(--pine-deep)]">Musculoskeletal & Orthopedic Physiotherapy</h1>
       <p class="mt-3 text-[color:var(--ink-soft)] max-w-xl leading-relaxed">Our name for treating pain and injury in your muscles, joints, and bones. Find what you're dealing with below, and we'll walk you through it.</p>
     </div>
     <div class="hidden md:block" aria-hidden="true">
@@ -547,6 +549,7 @@
       <input type="hidden" name="access_key" value="95354b54-3606-4b6d-9a26-cca7b9409d01">
       <input type="hidden" name="subject" value="New message from Musculoskeletal page — Quest Physiotherapy website">
       <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+      <div id="contact-fields" class="space-y-4">
       <div>
         <label for="contact-name" class="block text-sm font-medium text-[color:var(--pine-deep)] mb-1.5">Name</label>
         <input type="text" id="contact-name" name="name" required class="w-full border border-[color:var(--line)] rounded-sm px-4 py-2.5 bg-white focus:outline-none focus:border-[color:var(--gold-deep)]" />
@@ -560,8 +563,18 @@
         <textarea id="contact-message" name="message" required rows="4" class="w-full border border-[color:var(--line)] rounded-sm px-4 py-2.5 bg-white focus:outline-none focus:border-[color:var(--gold-deep)]"></textarea>
       </div>
       <button type="submit" id="contact-submit" class="bg-[color:var(--pine)] text-white px-7 py-3 rounded-sm font-medium hover:bg-[color:var(--pine-deep)] transition-colors">Send message</button>
-      <p id="contact-success" class="hidden text-[15px] text-[color:var(--pine-deep)] font-medium">Thanks — your message has been sent. We'll get back to you shortly.</p>
       <p id="contact-error" class="hidden text-[15px] text-red-700">Something went wrong sending your message — please call us instead at (416) 835-0509.</p>
+      </div>
+      <div id="contact-success" class="hidden mt-2 bg-white border-2 border-[color:var(--pine)] rounded-sm p-6 flex items-start gap-4">
+        <svg width="28" height="28" viewBox="0 0 28 28" class="shrink-0 mt-0.5" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" fill="none" stroke="#1F4741" stroke-width="2"/>
+          <path d="M8 14.5 L12 18.5 L20 9.5" fill="none" stroke="#B8873C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="text-lg font-semibold text-[color:var(--pine-deep)]">Message sent</p>
+          <p class="mt-1 text-[color:var(--ink-soft)]">We'll get back to you shortly by email.</p>
+        </div>
+      </div>
     </form>
   </div>
 </section>
@@ -664,6 +677,7 @@
     const submitBtn = document.getElementById('contact-submit');
     const successMsg = document.getElementById('contact-success');
     const errorMsg = document.getElementById('contact-error');
+    const contactFields = document.getElementById('contact-fields');
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       successMsg.classList.add('hidden');
@@ -677,6 +691,7 @@
           headers: { 'Accept': 'application/json' }
         });
         if (response.ok) {
+          contactFields.classList.add('hidden');
           successMsg.classList.remove('hidden');
           contactForm.reset();
         } else {
